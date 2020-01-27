@@ -11,15 +11,15 @@ import java.util.Arrays;
 public class FilterRegisterConfig {
 
     @Bean
-    public FilterRegistrationBean myFilterBean() {
+    public FilterRegistrationBean<myFilter> myFilterBean() {
 
-        FilterRegistrationBean result = new FilterRegistrationBean();
+        FilterRegistrationBean<myFilter> result = new FilterRegistrationBean<>();
 
         result.setFilter(new myFilter());
 
         String[] urlPatterns = {"/get1"};
 
-        result.setUrlPatterns(Arrays.asList(urlPatterns));
+        result.addUrlPatterns(urlPatterns);
 
         return result;
 
